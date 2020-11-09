@@ -1,0 +1,33 @@
+{%extends 'foodtaskerapp/base.html'%}
+
+{% block content %}
+<div class="d-flex p-2">Restaurant Sign up</div>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table class="table table-bordered">
+       {% for field in user_form.visible_fields %}
+         <tr>
+           <th>{{ field.label_tag }}</th>
+           <td>
+             {{ field.errors }}
+             {{ field }}
+             {{ field.help_text }}
+           </td>
+         </tr>
+       {% endfor %}
+       {% for field in restaurant_form.visible_fields %}
+         <tr>
+           <th>{{ field.label_tag }}</th>
+           <td>
+             {{ field.errors }}
+             {{ field }}
+             {{ field.help_text }}
+           </td>
+         </tr>
+       {% endfor %}
+</table>
+
+<button type="submit" class="btn btn-primary mb-2">Submit</button>
+
+</form>
+{% endblock %}

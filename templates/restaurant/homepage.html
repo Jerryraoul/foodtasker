@@ -1,0 +1,13 @@
+{%extends 'foodtaskerapp/base.html'%}
+
+{% block content %}
+<div class="d-flex p-2">Restaurants lists</div>
+<ul  class="list-group">
+{% for restaurant in list_restaurants %}
+	<li class="list-item">{{ restaurant.name }}</li>
+    <li class="list-item">{{ restaurant.address }}</li>
+    <li class="list-item">{{ restaurant.phone }}</li>
+    <br>
+{% endfor %}
+</ul>
+{% endblock %}

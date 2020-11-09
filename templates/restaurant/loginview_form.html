@@ -1,0 +1,13 @@
+{%extends 'foodtaskerapp/base.html'%}
+
+{% block content %}
+<div class="d-flex p-2">You can login here</div>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+      {{ form }}
+      <button type="submit">Sign In</button>
+<div class="col-auto">
+<button type="submit" class="btn btn-primary mb-2">Submit</button>
+
+        {% endblock %}
